@@ -1,0 +1,11 @@
+
+.worshipLeaderImg {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about {
+  text-indent: 2rem;
+  text-justify: inter-word;
+}
