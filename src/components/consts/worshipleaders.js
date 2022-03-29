@@ -47,5 +47,12 @@ export const worshipleaders = [
         name: "Roxanne 7",
         about: "I like eating, eating is my hobby.",
         imgSrc: "https://i1.sndcdn.com/artworks-000041317609-riz64u-t240x240.jpg"
+    },
+    {
+        id:8,
+        name: "Amrit Ram",
+        about: "LOLZ",
+        imgSrc : "https://media-exp1.licdn.com/dms/image/C5603AQEewbLLwUn1Ag/profile-displayphoto-shrink_200_200/0/1516460046784?e=1654128000&v=beta&t=fslkh7LdPK5qrvj3aVB5TdsBnsOFdPPSQAiiSAmxz5k"
+
     }
 ]

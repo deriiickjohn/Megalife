@@ -7,7 +7,8 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import logo from '../assets/logo.png'
 import { NavMenuItems } from './consts/navbaritems';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink, useLocation } from 'react-router-dom';
+import './Header.css'
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -56,6 +57,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavigationBar() {
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const { pathname } = location;
+    const splitLocation = pathname.split("/");
 
 
     return (
@@ -75,14 +80,41 @@ export default function NavigationBar() {
                             Megalife
                         </Typography>
 
+                        {/* <NavLink
+                            to={"/home"}
+                            className={({ isActive }) => 
+                                (isActive ? "test" : {color: 'blue'})}
+                        >
+                            Home
+                        </NavLink>
+
+                        <NavLink
+                            to={"/home5"}
+                            className={({ isActive })  => 
+                            (isActive ? "test" : {color: 'blue'})}
+                            
+                        >
+                            Home5
+                        </NavLink> */}
+
                         {/* MENU ITEMS */}
                         <Box sx={{ display: "flex", flexDirection: "row" }}>
 
                             {NavMenuItems.map((navItems) => (
 
-                                <Box>
-                                    <Typography key={navItems.id} sx={{
-                                        marginX: 3, '&:hover': {
+                                <Box key={navItems.id} className={"test2"}
+                                // sx={{
+                                //     '&:hover': {
+                                //         color: "rgb(0, 219, 227)",
+                                //         borderBottom: "5px solid white",
+                                //         marginBottom: "-20px"
+
+                                //     }
+                                // }}
+                                >
+                                    {/* <Typography sx={{
+                                        marginX: 3,
+                                        '&:hover': {
                                             color: "rgb(171, 219, 227)",
                                             cursor: "pointer"
 
@@ -92,7 +124,16 @@ export default function NavigationBar() {
                                         onClick={() => navigate(navItems.route)}
                                     >
                                         {navItems.label}
-                                    </Typography>
+                                    </Typography> */}
+
+                                    <NavLink
+                                        to={navItems.route}
+                                        className={({ isActive }) =>
+                                            (isActive ? "test test2" : { color: 'blue' })}
+                                    >
+                                        {navItems.label}
+                                    </NavLink>
+
                                 </Box>
 
                             ))}
